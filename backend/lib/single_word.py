@@ -18,10 +18,10 @@ class SingleWord(object):
         years = list(range(1801, 2009))
         return {'values': values, 'years': years}
 
-    def get_candidate_words(self, query):
+    def get_candidate_words(self, query, max_num=50):
         candidates = [x for x in self.words if query in x]
         candidates.sort(key=len)
-        return candidates
+        return candidates[:max_num]
 
 
 SINGLEWORD = SingleWord()
